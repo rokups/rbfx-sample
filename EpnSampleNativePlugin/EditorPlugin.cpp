@@ -11,13 +11,13 @@ class EditorPlugin : public PluginApplication
 public:
     explicit EditorPlugin(Context* context) : PluginApplication(context) { }
 
-    void OnLoad() override
+    void Load() override
     {
         // Called when editor is loading plugin. Do all plugin setup here.
         RegisterCoreLibrary(context_);
     }
 
-    void OnUnload() override
+    void Unload() override
     {
         // Editor is exiting or plugin is being reloaded. Undo all the changes performed in OnLoad(). After this method
         // exits this library will be unloaded from memory. Failure to clean editor state from any objects provided by
